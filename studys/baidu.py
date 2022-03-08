@@ -29,7 +29,7 @@ if __name__ == "__main__":
         "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.102 Safari/537.36"
     }
 
-    response = requests.get(url=url, data=data, headers=headers)
+    response = requests.get(url=url, params=data, headers=headers)
     response.encoding = "utf-8"  # 设置响应内容的编码
     fp = open("result.html", mode="w", encoding="utf-8")
     fp.write(response.text)
