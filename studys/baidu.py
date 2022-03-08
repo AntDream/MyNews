@@ -15,7 +15,7 @@ import requests
 
 if __name__ == "__main__":
     # 定义搜索的url
-    url = "https://www.baidu.com/s"
+    url = "https://www.baidu.com/s?"
 
     # 获取用户输入的关键字
     word = input("请输入关键字...")
@@ -26,10 +26,11 @@ if __name__ == "__main__":
 
     # 设置请求头
     headers = {
-        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.102 Safari/537.36"
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.102 Safari/537.36",
+        "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9"
     }
 
-    response = requests.get(url=url, data=data, headers=headers)
+    response = requests.get(url=url, params=data, headers=headers)
     response.encoding = "utf-8"  # 设置响应内容的编码
     fp = open("result.html", mode="w", encoding="utf-8")
     fp.write(response.text)
