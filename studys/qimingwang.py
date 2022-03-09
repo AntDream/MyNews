@@ -17,6 +17,8 @@ import urllib.request, urllib.parse, urllib.error
 from http import cookiejar
 from html.parser import HTMLParser
 
+import requests
+
 names_url = "http://www.qimingzi.net/showNames.aspx"
 base_url = "http://www.qimingzi.net/"
 
@@ -70,6 +72,10 @@ def getHtml(url, params={}, headers={}):
     print(response.getcode())
     print(response.read().decode('gb2312', 'ignore') + b"/n")
     return response.read().decode('gb2312', 'ignore') + b"/n"
+
+
+def getHtml(url, params={}, headers={}):
+    response = requests.post()
 
 
 def getCookie(url):
