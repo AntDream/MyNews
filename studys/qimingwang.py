@@ -62,20 +62,9 @@ class myHtmlParser(HTMLParser):
 
 
 def getHtml(url, params={}, headers={}):
-    if params and headers:
-        request = urllib.request.Request(url, data=data, headers=headers)
-    else:
-        request = urllib.request.Request(url)
-
-    print(request.full_url)
-    response = urllib.request.urlopen(request)
-    print(response.getcode())
-    print(response.read().decode('gb2312', 'ignore') + b"/n")
-    return response.read().decode('gb2312', 'ignore') + b"/n"
-
-
-def getHtml(url, params={}, headers={}):
-    response = requests.post()
+    response = requests.post(url=url, data=params, headers=headers)
+    response.encoding = "gb2312"
+    return response.content
 
 
 def getCookie(url):
