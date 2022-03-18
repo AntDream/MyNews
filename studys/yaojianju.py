@@ -1,14 +1,13 @@
-# -*- coding: utf-8 -*-
+# -*- coding: UTF-8 -*-
 '''
+
 @author: Ant
 
 @file: yaojianju.py
 
-@time: 2022/3/9 23:20
+@time: 2022/3/9 13:42
 
-@desc: 获取药监局的准入许可机构
+@desc:药监局医疗许可证
 
 '''
 
-if __name__ =="__main__":
-    pass
