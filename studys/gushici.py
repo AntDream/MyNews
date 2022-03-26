@@ -53,6 +53,12 @@ def getByClass(url):
             article['title'] = article_html.xpath('//*[@id="sonsyuanwen"]/div[1]/h1/text()')[0]
             article['source'] = article_html.xpath('//*[@id="sonsyuanwen"]/div[1]/p//text()')
             article['content'] = article_html.xpath('//*[@id="sonsyuanwen"]/div[1]/div[@class="contson"]/text()')
+
+            # 判断是否有阅读全文
+
+
+            # 获取注释和释义，https://so.gushiwen.cn/nocdn/ajaxfanyi.aspx?id=FD66AB3E1BC36781
+
             article_list.append(article)
 
 
